@@ -2,209 +2,345 @@
 ===========================================================
 PROYECTO  : Portafolio Profesional OuKeiZee
 AUTOR     : OuKeiZee
-VERSIÓN   : 1.0
+VERSIÓN   : 1.0.1
 ARCHIVO   : index.html
-
 DESCRIPCIÓN:
 Archivo principal del sitio web. Contiene la estructura
-general sobre la que se renderizan todas las secciones
-del portafolio profesional.
+general sobre la que se renderizan todas las secciones.
 
 © 2026 OuKeiZee
 ===========================================================
 -->
-
 <!DOCTYPE html>
+
 <html lang="es">
-
 <head>
+<!-- ========================================================= -->
+<!-- [01] CONFIGURACIÓN DEL DOCUMENTO -->
+<!-- Meta etiquetas, fuentes, estilos y configuración global -->
+<!-- ========================================================= -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OuKeiZee | Dashboard Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
 
-    <!-- ==========================================================
-         CONFIGURACIÓN GENERAL
-         Define el idioma, codificación y compatibilidad móvil.
-    =========================================================== -->
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>OuKeiZee | Portafolio Profesional</title>
-
-    <meta name="description" content="Portafolio Profesional de OuKeiZee">
-    <meta name="keywords" content="Portfolio, HTML, CSS, JavaScript, UI, UX">
-    <meta name="author" content="OuKeiZee">
-
-    <!-- ==========================================================
-         GOOGLE FONTS
-         Tipografías utilizadas en el proyecto.
-    =========================================================== -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
-        rel="stylesheet">
-
-    <!-- ==========================================================
-         FONT AWESOME
-         Librería de iconos.
-    =========================================================== -->
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <!-- ==========================================================
-         ESTILOS
-    =========================================================== -->
-
-    <link rel="stylesheet" href="assets/css/style.css">
-
-</head>
-
+<!-- FASE 1 (parcial): IDs de navegación corregidos y enlaces externos protegidos.
+Pendiente: reorganización completa del CSS y JS. -->
+<link href="css/variables.css" rel="stylesheet"/><link href="css/base.css" rel="stylesheet"/><link href="css/layout.css" rel="stylesheet"/><link href="css/components.css" rel="stylesheet"/><link href="css/animations.css" rel="stylesheet"/><link href="css/responsive.css" rel="stylesheet"/><link href="css/theme.css" rel="stylesheet"/></head>
 <body>
-
-    <!-- ==========================================================
-         PRELOADER
-         Pantalla de carga inicial.
-    =========================================================== -->
-
-    <div id="preloader"></div>
-
-    <!-- ==========================================================
-         APLICACIÓN PRINCIPAL
-         Contenedor que agrupa toda la interfaz.
-    =========================================================== -->
-
-    <div class="app">
-
-        <!-- ======================================================
-             SIDEBAR
-             Barra lateral izquierda con navegación principal.
-        ======================================================= -->
-
-        <aside id="sidebar">
-
-        </aside>
-
-        <!-- ======================================================
-             CONTENIDO PRINCIPAL
-             Todas las secciones visibles del sitio web.
-        ======================================================= -->
-
-        <main class="main-content">
-
-            <!-- ==================================================
-                 HEADER
-                 Barra superior de navegación.
-            =================================================== -->
-
-            <header id="header">
-
-            </header>
-
-            <!-- ==================================================
-                 HERO
-                 Presentación principal del desarrollador.
-            =================================================== -->
-
-            <section id="hero">
-
-            </section>
-
-            <!-- ==================================================
-                 ESTADÍSTICAS
-                 Experiencia, clientes y proyectos.
-            =================================================== -->
-
-            <section id="stats">
-
-            </section>
-
-            <!-- ==================================================
-                 PROYECTOS
-                 Trabajos realizados.
-            =================================================== -->
-
-            <section id="projects">
-
-            </section>
-
-            <!-- ==================================================
-                 HABILIDADES
-                 Tecnologías dominadas.
-            =================================================== -->
-
-            <section id="skills">
-
-            </section>
-
-            <!-- ==================================================
-                 SERVICIOS
-                 Servicios ofrecidos.
-            =================================================== -->
-
-            <section id="services">
-
-            </section>
-
-            <!-- ==================================================
-                 CONTACTO
-                 Formulario de contacto.
-            =================================================== -->
-
-            <section id="contact">
-
-            </section>
-
-            <!-- ==================================================
-                 FOOTER
-                 Pie de página.
-            =================================================== -->
-
-            <footer id="footer">
-
-            </footer>
-
-        </main>
-
-    </div>
-
-    <!-- ==========================================================
-         REDES SOCIALES
-         Barra flotante lateral izquierda.
-    =========================================================== -->
-
-    <aside class="social-bar">
-
-    </aside>
-
-    <!-- ==========================================================
-         BOTONES FLOTANTES
-         Acciones rápidas del sitio.
-    =========================================================== -->
-
-    <div class="floating-buttons">
-
-    </div>
-
-    <!-- ==========================================================
-         BOTÓN SCROLL TOP
-         Permite regresar al inicio de la página.
-    =========================================================== -->
-
-    <button id="scrollTop">
-
-        <i class="fa-solid fa-arrow-up"></i>
-
-    </button>
-
-    <!-- ==========================================================
-         JAVASCRIPT PRINCIPAL
-         Punto de entrada de toda la lógica del sitio.
-    =========================================================== -->
-
-    <script src="assets/js/main.js"></script>
-
+<!-- ========================================================= -->
+<!-- [02] INICIO DEL CUERPO DEL DOCUMENTO -->
+<!-- ========================================================= -->
+<div class="cursor-dot"></div><div class="cursor-ring"></div>
+<button class="theme-toggle" id="themeBtn" title="Cambiar tema">
+<i class="fa-solid fa-moon"></i>
+</button>
+<div id="loader">
+<h1 id="loaderLogo"><span>O</span><span>U</span><span>K</span><span>E</span><span>I</span><span>Z</span><span>E</span><span>E</span></h1>
+<div class="loader-bar"><span></span></div>
+</div>
+<div class="layout">
+<main>
+<!-- ========================================================= -->
+<!-- [03] BARRA DE NAVEGACIÓN -->
+<!-- ========================================================= -->
+<nav class="top-navbar">
+<a href="#inicio">Inicio</a>
+<a href="#sobre">Sobre mí</a>
+<a href="#servicios">Servicios</a>
+<a href="#portafolio">Portafolio</a>
+<a href="#logos">Logos</a>
+<a href="#contacto">Contacto</a>
+<a class="talk-btn" href="#contacto">Hablemos <i class="fa-regular fa-paper-plane"></i></a>
+</nav>
+<!-- ========================================================= -->
+<!-- [04] HERO PRINCIPAL -->
+<!-- ========================================================= -->
+<section class="hero" id="inicio">
+<div>
+<h1>Hola, soy <span>Gustavo Adolfo</span><br/>OuKeiZee</h1>
+<p>Diseñador gráfico, marketing digital, branding, editor de video e imágenes. Más de 7 años creando marcas personales y corporativas.</p>
+<a class="btn" href="#">Ver Portafolio</a>
+</div>
+<div class="avatar">🧑‍💻</div>
+</section>
+<!-- ========================================================= -->
+<!-- [05] CARRUSEL DE PROYECTOS -->
+<!-- ========================================================= -->
+<section class="carousel-section">
+<h2 class="carousel-title">Proyectos Destacados</h2>
+<div class="carousel-wrap">
+<div class="carousel-track">
+<div class="carousel-card"><img alt="Proyecto 1" src="https://picsum.photos/300/420?random=1"/></div><div class="carousel-card"><img alt="Proyecto 2" src="https://picsum.photos/300/420?random=2"/></div><div class="carousel-card"><img alt="Proyecto 3" src="https://picsum.photos/300/420?random=3"/></div><div class="carousel-card"><img alt="Proyecto 4" src="https://picsum.photos/300/420?random=4"/></div><div class="carousel-card"><img alt="Proyecto 5" src="https://picsum.photos/300/420?random=5"/></div><div class="carousel-card"><img alt="Proyecto 6" src="https://picsum.photos/300/420?random=6"/></div><div class="carousel-card"><img alt="Proyecto 7" src="https://picsum.photos/300/420?random=7"/></div><div class="carousel-card"><img alt="Proyecto 8" src="https://picsum.photos/300/420?random=8"/></div><div class="carousel-card"><img alt="Proyecto 9" src="https://picsum.photos/300/420?random=9"/></div><div class="carousel-card"><img alt="Proyecto 10" src="https://picsum.photos/300/420?random=10"/></div>
+<div class="carousel-card"><img alt="Proyecto 1" src="https://picsum.photos/300/420?random=1"/></div><div class="carousel-card"><img alt="Proyecto 2" src="https://picsum.photos/300/420?random=2"/></div><div class="carousel-card"><img alt="Proyecto 3" src="https://picsum.photos/300/420?random=3"/></div><div class="carousel-card"><img alt="Proyecto 4" src="https://picsum.photos/300/420?random=4"/></div><div class="carousel-card"><img alt="Proyecto 5" src="https://picsum.photos/300/420?random=5"/></div><div class="carousel-card"><img alt="Proyecto 6" src="https://picsum.photos/300/420?random=6"/></div><div class="carousel-card"><img alt="Proyecto 7" src="https://picsum.photos/300/420?random=7"/></div><div class="carousel-card"><img alt="Proyecto 8" src="https://picsum.photos/300/420?random=8"/></div><div class="carousel-card"><img alt="Proyecto 9" src="https://picsum.photos/300/420?random=9"/></div><div class="carousel-card"><img alt="Proyecto 10" src="https://picsum.photos/300/420?random=10"/></div>
+</div>
+</div>
+</section>
+<!-- ========================================================= -->
+<!-- [06] ESTADÍSTICAS -->
+<!-- ========================================================= -->
+<section class="stats-panel">
+<div class="stat"><i class="fa-regular fa-face-smile"></i><div><h3 id="happyClients">0+</h3><p>Clientes felices</p></div></div>
+<div class="stat"><i class="fa-regular fa-folder-open"></i><div><h3 id="projectsDone">0+</h3><p>Portafolios realizados</p></div></div>
+<div class="stat"><i class="fa-solid fa-pen-ruler"></i><div><h3 id="logosMade">0+</h3><p>Logos diseñados</p></div></div>
+<div class="stat"><i class="fa-solid fa-award"></i><div><h3 id="yearsExp">0+</h3><p>Años de experiencia</p></div></div>
+</section>
+<!-- ========================================================= -->
+<!-- [07] CONTENIDO PRINCIPAL -->
+<!-- Sobre mí, servicios, portafolio, habilidades y logos -->
+<!-- ========================================================= -->
+<section class="grid">
+<div class="card" id="sobre"><h3>Sobre mí</h3><p>Fundador de OuKeiZee. Especializado en identidad visual, contenido y estrategias digitales.</p></div>
+<div class="card">
+<h3 id="servicios">Servicios</h3>
+<div class="services-grid">
+<div class="service-box" data-items="Diseño de logotipos|Identidad corporativa|Papelería empresarial|Publicidad impresa" data-title="🎨 Diseño Gráfico"><h4>🎨 Diseño Gráfico</h4></div>
+<div class="service-box" data-items="Naming|Manual de marca|Identidad visual|Estrategia de marca" data-title="🏷️ Branding"><h4>🏷️ Branding</h4></div>
+<div class="service-box" data-items="Meta Ads|Google Ads|SEO|Redes Sociales" data-title="📈 Marketing Digital"><h4>📈 Marketing Digital</h4></div>
+<div class="service-box" data-items="Reels|Shorts|Comerciales|Motion Graphics" data-title="🎬 Edición de Video"><h4>🎬 Edición de Video</h4></div>
+<div class="service-box" data-items="Landing Pages|Portafolios|Responsive|Optimización" data-title="💻 Diseño Web"><h4>💻 Diseño Web</h4></div>
+</div>
+</div>
+<div class="card" id="portafolio"><h3>Portafolio</h3><div class="gallery"><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+<div class="card">
+<h3>Habilidades</h3>
+<div class="skill-item"><div class="skill-head"><span>Photoshop</span><span id="p1">95%</span></div><div class="progress"><div class="fill" id="f1" style="width:95%"></div></div></div>
+<div class="skill-item"><div class="skill-head"><span>Illustrator</span><span id="p2">95%</span></div><div class="progress"><div class="fill" id="f2" style="width:95%"></div></div></div>
+<div class="skill-item"><div class="skill-head"><span>Premiere</span><span id="p3">95%</span></div><div class="progress"><div class="fill" id="f3" style="width:95%"></div></div></div>
+<div class="skill-item"><div class="skill-head"><span>After Effects</span><span id="p4">75%</span></div><div class="progress"><div class="fill" id="f4" style="width:75%"></div></div></div>
+<div class="skill-item"><div class="skill-head"><span>CapCut</span><span id="p5">85%</span></div><div class="progress"><div class="fill" id="f5" style="width:85%"></div></div></div>
+<div class="skill-item"><div class="skill-head"><span>Canva</span><span id="p6">70%</span></div><div class="progress"><div class="fill" id="f6" style="width:70%"></div></div></div>
+<div class="skill-item"><div class="skill-head"><span>Blender</span><span id="p7">45%</span></div><div class="progress"><div class="fill" id="f7" style="width:45%"></div></div></div>
+</div><div class="card" id="logos"><h3>Logos</h3><div class="gallery"><div></div><div></div><div></div><div></div><div></div><div></div></div></div><div class="card">
+<h3>Contacto</h3>
+<p>WhatsApp<br/>Correo<br/>Redes Sociales</p>
+</div></section></main></div>
+<div class="card">
+<h3>Preguntas Frecuentes</h3>
+<details><summary>¿Cuánto tarda un proyecto?</summary><p>Depende del alcance; un logotipo suele requerir entre 3 y 7 días hábiles.</p></details>
+<details><summary>¿Qué archivos entregas?</summary><p>Entrego formatos listos para impresión y uso digital.</p></details>
+<details><summary>¿Trabajas con clientes de otros países?</summary><p>Sí, trabajo de forma remota con clientes nacionales e internacionales.</p></details>
+<details><summary>¿Cuántas revisiones incluye?</summary><p>Las revisiones dependen del servicio contratado.</p></details>
+</div>
+<div class="social-floating">
+<div class="social facebook-menu">
+<a class="social-main" href="javascript:void(0)" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+<div class="facebook-options">
+<a href="https://www.facebook.com/profile.php?id=61586981262918" rel="noopener noreferrer" target="_blank">Perfil</a>
+<a href="#" rel="noopener noreferrer" target="_blank">Grupo</a>
+</div>
+</div>
+<a class="social" href="https://www.instagram.com/oukeizee/" rel="noopener noreferrer" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+<a class="social" href="https://www.tiktok.com/@oukeizee" rel="noopener noreferrer" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+<a class="social" href="https://www.youtube.com/@OuKeiZee" rel="noopener noreferrer" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+<a class="social" href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+<a class="social" href="#" title="Behance"><i class="fab fa-behance"></i></a>
+<a class="social" href="#" title="GitHub"><i class="fab fa-github"></i></a>
+<a class="social" href="#" title="Discord"><i class="fab fa-discord"></i></a>
+<a class="social" href="#" title="Twitch"><i class="fab fa-twitch"></i></a>
+<a class="social" href="#" title="Reddit"><i class="fab fa-reddit-alien"></i></a>
+</div>
+<a class="bot-floating" href="#" title="Asistente IA">
+<i class="fa-solid fa-robot"></i>
+</a>
+<a class="forum-floating" href="#" title="Formulario">
+<i class="fa-solid fa-envelope"></i>
+</a>
+<a class="whatsapp-floating" href="https://wa.me/573505956087" rel="noopener noreferrer" target="_blank" title="WhatsApp">
+<i class="fab fa-whatsapp"></i>
+</a>
+<!-- ========================================================= -->
+<!-- [10] SCRIPTS DEL SITIO -->
+<!-- ========================================================= -->
+<script>
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    const l=document.getElementById('loader');
+    if(l){
+      l.style.opacity='0';
+      l.style.transition='opacity .5s';
+      setTimeout(()=>l.remove(),500);
+    }
+  },1800);
+});
+</script>
+<script>
+function animateSkill(fillId,labelId,target,interval,delay){
+ const fill=document.getElementById(fillId);
+ const label=document.getElementById(labelId);
+ if(!fill||!label)return;
+ function cycle(){
+   let value=0;
+   fill.style.width='0%';
+   label.textContent='0%';
+   const t=setInterval(()=>{
+      value++;
+      fill.style.width=value+'%';
+      label.textContent=value+'%';
+      if(value>=target){
+        clearInterval(t);
+        setTimeout(cycle,500);
+      }
+   },interval);
+ }
+ setTimeout(cycle,delay);
+}
+window.addEventListener('load',()=>{
+ setTimeout(()=>{
+   animateSkill('f1','p1',95,10,0);
+   animateSkill('f2','p2',95,20,400);
+   animateSkill('f3','p3',95,32,900);
+   animateSkill('f4','p4',75,18,1200);
+   animateSkill('f5','p5',85,16,1500);
+   animateSkill('f6','p6',70,18,1800);
+   animateSkill('f7','p7',45,24,2100);
+ },1900);
+});
+</script>
+<script>
+const themeBtn=document.getElementById('themeBtn');
+themeBtn.addEventListener('click',()=>{
+ document.body.classList.toggle('light');
+ const icon=themeBtn.querySelector('i');
+ if(document.body.classList.contains('light')){
+   icon.className='fa-solid fa-sun';
+ }else{
+   icon.className='fa-solid fa-moon';
+ }
+});
+</script>
+<div id="serviceOverlay"><div id="servicePanel"></div></div>
+<script>
+const panel=document.getElementById('servicePanel');
+document.querySelectorAll('.service-box').forEach(box=>{
+ box.addEventListener('mouseenter',e=>{
+   const r=box.getBoundingClientRect();
+   const items=box.dataset.items.split('|').map(i=>'<li>'+i+'</li>').join('');
+   panel.innerHTML='<h3>'+box.dataset.title+'</h3><p>Este servicio incluye:</p><ul>'+items+'</ul>';
+   panel.style.display='block';
+   let left=r.right+20;
+   if(left+380>window.innerWidth) left=r.left-380;
+   panel.style.left=left+'px';
+   panel.style.top=(r.top)+'px';
+ });
+ box.addEventListener('mouseleave',()=>panel.style.display='none');
+});
+</script>
+<script>
+document.body.style.cursor='none';
+let mouseX=window.innerWidth/2,mouseY=window.innerHeight/2;
+document.addEventListener('mousemove',e=>{
+  mouseX=e.clientX;
+  mouseY=e.clientY;
+});
+function spawnRipple(){
+  const r=document.createElement('div');
+  r.className='ripple';
+  r.style.left=mouseX+'px';
+  r.style.top=mouseY+'px';
+  document.body.appendChild(r);
+  setTimeout(()=>r.remove(),1200);
+}
+setInterval(spawnRipple,120);
+</script>
+<!-- ========================================================= -->
+<!-- [08] CONTACTO -->
+<!-- ========================================================= -->
+<section class="contact-premium" id="contacto"><div class="contact-left"><h2>¡Trabajemos Juntos!</h2><p>¿Tienes un proyecto en mente?<br/>Hagamos realidad tu marca.</p></div><form class="contact-form"><input placeholder="Tu nombre"/><input placeholder="Tu correo"/><textarea placeholder="Escribe tu mensaje"></textarea><button>Enviar Mensaje</button></form><div class="contact-info"><div><b>Correo</b><br/>tucorreo@oukeizee.com</div><div><b>WhatsApp</b><br/>+57 350 5956087</div><div><b>Ubicación</b><br/>Colombia</div></div></section>
+<!-- ========================================================= -->
+<!-- [09] PIE DE PÁGINA -->
+<!-- ========================================================= -->
+<footer class="footer-premium">
+<div class="footer-grid">
+<div>
+<h3>OuKeiZee</h3>
+<p>Diseñador Gráfico, Branding, Marketing Digital y Editor Multimedia. Transformo ideas en marcas memorables.</p>
+</div>
+<div class="footer-links">
+<h4>Enlaces</h4>
+<a href="#">Inicio</a>
+<a href="#">Servicios</a>
+<a href="#">Portafolio</a>
+<a href="#">FAQ</a>
+<a href="#">Contacto</a>
+</div>
+<div class="footer-links">
+<h4>Legal</h4>
+<a href="#">Política de Privacidad</a>
+<a href="#">Términos y Condiciones</a>
+<a href="#">Cookies</a>
+</div>
+<div>
+<h4>Sígueme</h4>
+<div class="footer-social">
+<a href="https://www.facebook.com/profile.php?id=61586981262918" rel="noopener noreferrer" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/oukeizee/" rel="noopener noreferrer" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.youtube.com/@OuKeiZee" rel="noopener noreferrer" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="https://www.tiktok.com/@oukeizee" rel="noopener noreferrer" target="_blank"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+</div>
+<div class="footer-copy">
+© 2026 OuKeiZee — Todos los derechos reservados.
+<br/>
+➤
+█║▌│█│║▌║││█║▌║▌║ ® 
+OuKeiZee ™
+<br/>
+Hecho con 💜
+</div>
+</footer>
+<script>
+const portfolioData={
+ happyClients:80,
+ projectsDone:120,
+ logosMade:350,
+ yearsExp:7
+};
+function animateCounter(id,target,suffix="+"){
+ const el=document.getElementById(id);
+ let n=0;
+ const step=Math.max(1,Math.ceil(target/60));
+ const t=setInterval(()=>{
+   n=Math.min(target,n+step);
+   el.textContent=n+suffix;
+   if(n>=target) clearInterval(t);
+ },25);
+}
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{
+   if(e.isIntersecting){
+     animateCounter('happyClients',portfolioData.happyClients);
+     animateCounter('projectsDone',portfolioData.projectsDone);
+     animateCounter('logosMade',portfolioData.logosMade);
+     animateCounter('yearsExp',portfolioData.yearsExp);
+     observer.disconnect();
+   }
+ });
+});
+observer.observe(document.querySelector('.stats-panel'));
+</script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const menu=document.querySelector('.facebook-menu');
+ if(!menu)return;
+ const btn=menu.querySelector('.social-main');
+ btn.addEventListener('click',function(e){
+   e.preventDefault();
+   e.stopPropagation();
+   menu.classList.toggle('open');
+ });
+ document.addEventListener('click',function(e){
+   if(!menu.contains(e.target)){
+      menu.classList.remove('open');
+   }
+ });
+});
+</script>
 </body>
-
 </html>

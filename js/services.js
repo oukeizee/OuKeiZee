@@ -18,107 +18,78 @@ RESPONSABILIDADES
 © 2026 OuKeiZee
 ===========================================================
 */
+/*
+===========================================================
+PROYECTO  : OuKeiZee Portfolio
+VERSIÓN   : 1.0.4
+ARCHIVO   : services.js
+===========================================================
+*/
 
+const Services = (() => {
 
-/* ===================================================== */
-/* [01] VARIABLES                                        */
-/* ===================================================== */
+    let panel;
 
-const serviceCards = document.querySelectorAll(".service-card");
-const servicePanels = document.querySelectorAll(".service-panel");
-const overlay = document.getElementById("overlay");
+    function showPanel(box) {
 
-const closeButtons = document.querySelectorAll(".service-close");
+        const rect = box.getBoundingClientRect();
 
+        const items = box.dataset.items
+            .split("|")
+            .map(item => `<li>${item}</li>`)
+            .join("");
 
-/* ===================================================== */
-/* [02] FUNCIONES                                        */
-/* ===================================================== */
+        panel.innerHTML = `
+            <h3>${box.dataset.title}</h3>
+            <p>Este servicio incluye:</p>
+            <ul>${items}</ul>
+        `;
 
-/**
- * Cierra todos los paneles.
- */
-function closeAllServices() {
+        panel.style.display = "block";
 
-    servicePanels.forEach(panel => {
+        let left = rect.right + 20;
 
-        panel.classList.remove("active");
+        if (left + 380 > window.innerWidth) {
 
-    });
+            left = rect.left - 380;
 
-    if (overlay) {
+        }
 
-        overlay.classList.remove("active");
-
-    }
-
-}
-
-
-/**
- * Abre un panel específico.
- */
-function openService(index) {
-
-    closeAllServices();
-
-    if (servicePanels[index]) {
-
-        servicePanels[index].classList.add("active");
+        panel.style.left = left + "px";
+        panel.style.top = rect.top + "px";
 
     }
 
-    if (overlay) {
+    function hidePanel() {
 
-        overlay.classList.add("active");
+        panel.style.display = "none";
 
     }
 
-}
+    function initialize() {
 
+        panel = document.getElementById("servicePanel");
 
-/**
- * Registra los eventos.
- */
-function registerServiceEvents() {
+        if (!panel) return;
 
-    serviceCards.forEach((card, index) => {
+        document.querySelectorAll(".service-box").forEach(box => {
 
-        card.addEventListener("click", () => {
+            box.addEventListener("mouseenter", () => {
 
-            openService(index);
+                showPanel(box);
+
+            });
+
+            box.addEventListener("mouseleave", hidePanel);
 
         });
 
-    });
-
-    closeButtons.forEach(button => {
-
-        button.addEventListener("click", closeAllServices);
-
-    });
-
-    if (overlay) {
-
-        overlay.addEventListener("click", closeAllServices);
-
     }
 
-}
+    return {
 
+        initialize
 
-/**
- * Inicializa el módulo.
- */
-function initializeServices() {
+    };
 
-    registerServiceEvents();
-
-}
-
-
-/* ===================================================== */
-/* [03] INICIALIZACIÓN                                   */
-/* ===================================================== */
-
-initializeServices();   
+})();

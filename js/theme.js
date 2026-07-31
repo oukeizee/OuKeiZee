@@ -18,82 +18,50 @@ RESPONSABILIDADES
 ===========================================================
 */
 
+/*
+===========================================================
+PROYECTO  : OuKeiZee Portfolio
+VERSIÓN   : 1.0.4
+ARCHIVO   : theme.js
+===========================================================
+*/
 
-/* ===================================================== */
-/* [01] VARIABLES                                        */
-/* ===================================================== */
+const Theme = (() => {
 
-const themeButton = document.getElementById("themeBtn");
+    function toggleTheme() {
 
-const THEME_CLASS = "light";
+        document.body.classList.toggle("light");
 
+        const icon = document.querySelector("#themeBtn i");
 
-/* ===================================================== */
-/* [02] FUNCIONES                                        */
-/* ===================================================== */
+        if (!icon) return;
 
-/**
- * Actualiza el icono según el tema activo.
- */
-function updateThemeIcon() {
+        if (document.body.classList.contains("light")) {
 
-    if (!themeButton) return;
+            icon.className = "fa-solid fa-sun";
 
-    const iconElement = themeButton.querySelector("i");
+        } else {
 
-    if (!iconElement) return;
+            icon.className = "fa-solid fa-moon";
 
-    if (document.body.classList.contains(THEME_CLASS)) {
-
-        iconElement.className = "fa-solid fa-sun";
-
-    } else {
-
-        iconElement.className = "fa-solid fa-moon";
+        }
 
     }
 
-}
+    function initialize() {
 
+        const themeBtn = document.getElementById("themeBtn");
 
-/**
- * Cambia entre tema claro y oscuro.
- */
-function toggleTheme() {
+        if (!themeBtn) return;
 
-    document.body.classList.toggle(THEME_CLASS);
+        themeBtn.addEventListener("click", toggleTheme);
 
-    updateThemeIcon();
+    }
 
-}
+    return {
 
+        initialize
 
-/**
- * Registra los eventos del botón.
- */
-function registerThemeEvents() {
+    };
 
-    if (!themeButton) return;
-
-    themeButton.addEventListener("click", toggleTheme);
-
-}
-
-
-/**
- * Inicializa el módulo.
- */
-function initializeTheme() {
-
-    updateThemeIcon();
-
-    registerThemeEvents();
-
-}
-
-
-/* ===================================================== */
-/* [03] INICIALIZACIÓN                                   */
-/* ===================================================== */
-
-initializeTheme();
+})();

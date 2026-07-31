@@ -91,5 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
     Skills.initialize();
     Theme.initialize();
     Services.initialize();
+    Counters.initialize();
 
 });

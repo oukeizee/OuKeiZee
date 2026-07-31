@@ -2,7 +2,7 @@
 ===========================================================
 PROYECTO  : Portafolio Profesional OuKeiZee
 AUTOR     : OuKeiZee
-VERSIÓN   : 1.0.3
+VERSIÓN   : 1.1.0
 ARCHIVO   : js/carousel.js
 
 DESCRIPCIÓN:
@@ -10,20 +10,11 @@ Gestiona el funcionamiento del carrusel.
 
 RESPONSABILIDADES
 
-- Avance automático.
-- Controles manuales.
-- Reinicio del temporizador.
-- Pausa al pasar el mouse.
+- Inicialización del carrusel.
+- Pausa al pasar el cursor.
+- Reanudación automática.
 
 © 2026 OuKeiZee
-===========================================================
-*/
-
-/*
-===========================================================
-PROYECTO  : OuKeiZee Portfolio
-VERSIÓN   : 1.1.0
-ARCHIVO   : carousel.js
 ===========================================================
 */
 
@@ -32,6 +23,8 @@ const Carousel = (() => {
     let section = null;
     let track = null;
     let cards = [];
+
+    let paused = false;
 
     function cacheDOM() {
 
@@ -52,66 +45,48 @@ const Carousel = (() => {
 
     }
 
-    function initialize() {
+    function pause() {
 
-    cacheDOM();
+        if (paused) return;
 
-    if (!validate()) {
-
-        console.warn("Carousel: elementos no encontrados.");
-
-        return;
-
-    }
-
-    section.addEventListener("mouseenter", () => {
+        paused = true;
 
         track.style.animationPlayState = "paused";
 
-    });
+    }
 
-    section.addEventListener("mouseleave", () => {
+    function resume() {
+
+        if (!paused) return;
+
+        paused = false;
 
         track.style.animationPlayState = "running";
 
-    });
+    }
 
-    console.log("Carousel inicializado.");
+    function initialize() {
 
-}
+        cacheDOM();
 
-    return {
-function initialize() {
+        if (!validate()) {
 
-    cacheDOM();
+            console.warn("Carousel: elementos no encontrados.");
 
-    if (!validate()) {
+            return;
 
-        console.warn("Carousel: elementos no encontrados.");
+        }
 
-        return;
+        section.addEventListener("mouseenter", pause);
+
+        section.addEventListener("mouseleave", resume);
+
+        console.log("Carousel inicializado.");
 
     }
 
-    section.addEventListener("mouseenter", pause);
+    return {
 
-    section.addEventListener("mouseleave", resume);
-
-    console.log("Carousel inicializado.");
-
-}
-
-function pause() {
-
-    track.style.animationPlayState = "paused";
-
-}
-
-function resume() {
-
-    track.style.animationPlayState = "running";
-
-}
         initialize
 
     };

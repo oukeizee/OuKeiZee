@@ -1,0 +1,368 @@
+/*
+===========================================================
+PROYECTO  : Portafolio Profesional OuKeiZee
+AUTOR     : OuKeiZee
+VERSIÓN   : 1.0.2
+ARCHIVO   : css/responsive.css
+DESCRIPCIÓN:
+Adaptación del sitio para diferentes resoluciones.
+
+Contiene exclusivamente las Media Queries del proyecto.
+
+© 2026 OuKeiZee
+===========================================================
+*/
+
+
+/* ===================================================== */
+/* [01] PANTALLAS <= 1400px                              */
+/* ===================================================== */
+
+@media (max-width:1400px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+}
+
+
+/* ===================================================== */
+/* [02] PANTALLAS <= 1200px                              */
+/* ===================================================== */
+
+@media (max-width:1200px){
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    .grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+/* ===================================================== */
+/* [03] PANTALLAS <= 1000px                              */
+/* ===================================================== */
+
+@media (max-width:1000px){
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    aside{
+        position:relative;
+        height:auto;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+/* ===================================================== */
+/* [04] PANTALLAS <= 992px                               */
+/* ===================================================== */
+
+@media (max-width:992px){
+
+    .layout{
+        grid-template-columns:1fr;
+    }
+
+    aside{
+
+        position:relative;
+
+        width:100%;
+
+        height:auto;
+
+        padding:20px;
+
+        border-right:none;
+
+        border-bottom:1px solid rgba(255,255,255,.08);
+
+    }
+
+    .logo,
+    .menu a,
+    p span{
+
+        margin-left:0 !important;
+
+    }
+
+    .menu{
+
+        display:grid;
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:10px;
+
+    }
+
+    .menu a{
+
+        margin:0;
+
+        padding:12px;
+
+        text-align:center;
+
+    }
+
+    main{
+
+        width:calc(100% - 130px) !important;
+
+        padding:18px;
+
+    }
+
+    .contact-premium,
+    .footer-premium,
+    body > .card{
+
+        width:calc(100% - 130px) !important;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        padding:24px;
+
+    }
+
+    .hero h1{
+
+        font-size:2.4rem;
+
+    }
+
+    .avatar{
+
+        font-size:6rem;
+
+    }
+
+    .social-floating{
+
+        left:10px;
+
+    }
+
+}
+
+
+/* ===================================================== */
+/* [05] PANTALLAS <= 900px                               */
+/* ===================================================== */
+
+@media (max-width:900px){
+
+    .stats-panel{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .stat{
+
+        border-right:none !important;
+
+    }
+
+}
+
+
+/* ===================================================== */
+/* [06] PANTALLAS <= 768px                               */
+/* ===================================================== */
+
+@media (max-width:768px){
+
+    .menu{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero h1{
+
+        font-size:2rem;
+
+    }
+
+    .card{
+
+        min-height:auto;
+
+    }
+
+    .gallery{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .carousel-card{
+
+        width:140px;
+
+        height:200px;
+
+    }
+
+    .social{
+
+        width:46px;
+
+        height:46px;
+
+        font-size:16px;
+
+    }
+
+    .bot-floating,
+    .forum-floating,
+    .whatsapp-floating{
+
+        width:48px;
+
+        height:48px;
+
+        right:12px;
+
+    }
+
+}
+
+
+/* ===================================================== */
+/* [07] PANTALLAS <= 600px                               */
+/* ===================================================== */
+
+@media (max-width:600px){
+
+    main,
+    .contact-premium,
+    .footer-premium,
+    body > .card{
+
+        width:calc(100% - 90px) !important;
+
+    }
+
+    .stats-panel{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .social-floating{
+
+        left:6px;
+
+    }
+
+    .bot-floating,
+    .forum-floating,
+    .whatsapp-floating{
+
+        right:6px;
+
+    }
+
+}
+
+
+/* ===================================================== */
+/* [08] PANTALLAS <= 480px                               */
+/* ===================================================== */
+
+@media (max-width:480px){
+
+    body{
+
+        font-size:15px;
+
+    }
+
+    main{
+
+        padding:12px;
+
+    }
+
+    .hero{
+
+        padding:18px;
+
+    }
+
+    .hero h1{
+
+        font-size:1.7rem;
+
+    }
+
+    .btn{
+
+        display:block;
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .gallery{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .service-popup{
+
+        width:90vw;
+
+        left:5vw !important;
+
+    }
+
+}

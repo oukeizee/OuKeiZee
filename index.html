@@ -157,18 +157,7 @@ Pendiente: reorganización completa del CSS y JS. -->
 <!-- ========================================================= -->
 <!-- [10] SCRIPTS DEL SITIO -->
 <!-- ========================================================= -->
-<script>
-window.addEventListener('load',()=>{
-  setTimeout(()=>{
-    const l=document.getElementById('loader');
-    if(l){
-      l.style.opacity='0';
-      l.style.transition='opacity .5s';
-      setTimeout(()=>l.remove(),500);
-    }
-  },1800);
-});
-</script>
+<script src="js/loader.js"></script>
 <script>
 function animateSkill(fillId,labelId,target,interval,delay){
  const fill=document.getElementById(fillId);
@@ -202,18 +191,8 @@ window.addEventListener('load',()=>{
  },1900);
 });
 </script>
-<script>
-const themeBtn=document.getElementById('themeBtn');
-themeBtn.addEventListener('click',()=>{
- document.body.classList.toggle('light');
- const icon=themeBtn.querySelector('i');
- if(document.body.classList.contains('light')){
-   icon.className='fa-solid fa-sun';
- }else{
-   icon.className='fa-solid fa-moon';
- }
-});
-</script>
+<script src="js/theme.js"></script>
+<script src="js/navbar.js"></script>
 <div id="serviceOverlay"><div id="servicePanel"></div></div>
 <script>
 const panel=document.getElementById('servicePanel');

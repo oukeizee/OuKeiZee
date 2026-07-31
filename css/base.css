@@ -1,0 +1,214 @@
+/*
+===========================================================
+PROYECTO  : Portafolio Profesional OuKeiZee
+AUTOR     : OuKeiZee
+VERSIÓN   : 1.0.2
+ARCHIVO   : css/base.css
+DESCRIPCIÓN:
+Configuración base del sitio.
+
+Contiene:
+- Reset CSS
+- Tipografía
+- Elementos HTML
+- Reglas globales
+- Comportamiento general
+
+© 2026 OuKeiZee
+===========================================================
+*/
+
+
+/* ===================================================== */
+/* [01] RESET GLOBAL                                     */
+/* ===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    min-width:0;
+}
+
+
+/* ===================================================== */
+/* [02] DOCUMENTO                                        */
+/* ===================================================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+/* ===================================================== */
+/* [03] BODY                                             */
+/* ===================================================== */
+
+body{
+
+    font-family:"Manrope",sans-serif;
+
+    color:var(--text);
+
+    background:var(--background-gradient);
+
+    cursor:none;
+
+    overflow-x:hidden;
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+    -moz-osx-font-smoothing:grayscale;
+
+}
+
+
+/* ===================================================== */
+/* [04] TIPOGRAFÍA                                       */
+/* ===================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+}
+
+p{
+
+    line-height:1.8;
+
+    color:var(--muted);
+
+}
+
+
+/* ===================================================== */
+/* [05] ENLACES                                          */
+/* ===================================================== */
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+    transition:var(--transition-normal);
+
+}
+
+
+/* ===================================================== */
+/* [06] IMÁGENES Y MULTIMEDIA                            */
+/* ===================================================== */
+
+img,
+video,
+iframe{
+
+    display:block;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+
+/* ===================================================== */
+/* [07] BOTONES                                          */
+/* ===================================================== */
+
+button{
+
+    font:inherit;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    cursor:pointer;
+
+}
+
+
+/* ===================================================== */
+/* [08] LISTAS                                           */
+/* ===================================================== */
+
+ul,
+ol{
+
+    list-style-position:inside;
+
+}
+
+
+/* ===================================================== */
+/* [09] FORMULARIOS                                      */
+/* ===================================================== */
+
+input,
+textarea,
+select,
+button{
+
+    font-family:inherit;
+
+}
+
+
+/* ===================================================== */
+/* [10] SELECCIÓN DE TEXTO                               */
+/* ===================================================== */
+
+::selection{
+
+    background:var(--accent);
+
+    color:#ffffff;
+
+}
+
+
+/* ===================================================== */
+/* [11] SCROLLBAR                                        */
+/* ===================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--accent);
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--accent2);
+
+}

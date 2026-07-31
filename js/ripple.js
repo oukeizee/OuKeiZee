@@ -19,92 +19,47 @@ RESPONSABILIDADES
 ===========================================================
 */
 
+/*
+===========================================================
+PROYECTO  : OuKeiZee Portfolio
+VERSIÓN   : 1.0.4
+ARCHIVO   : ripple.js
+===========================================================
+*/
 
-/* ===================================================== */
-/* [01] VARIABLES                                        */
-/* ===================================================== */
+const Ripple = (() => {
 
-const rippleElements = document.querySelectorAll(
+    function spawnRipple() {
 
-    ".btn, .service-card, .portfolio-item"
+        const position = Cursor.getPosition();
 
-);
+        const ripple = document.createElement("div");
 
+        ripple.className = "ripple";
 
-/* ===================================================== */
-/* [02] FUNCIONES                                        */
-/* ===================================================== */
+        ripple.style.left = position.x + "px";
+        ripple.style.top = position.y + "px";
 
-/**
- * Crea el efecto ripple.
- */
-function createRipple(event) {
+        document.body.appendChild(ripple);
 
-    const element = event.currentTarget;
+        setTimeout(() => {
 
-    const ripple = document.createElement("span");
+            ripple.remove();
 
-    ripple.classList.add("ripple");
+        }, 1200);
 
-    const rect = element.getBoundingClientRect();
+    }
 
-    const size = Math.max(rect.width, rect.height);
+    function initialize() {
 
-    ripple.style.width = `${size}px`;
-    ripple.style.height = `${size}px`;
+        setInterval(spawnRipple, 120);
 
-    ripple.style.left =
-        `${event.clientX - rect.left - size / 2}px`;
+    }
 
-    ripple.style.top =
-        `${event.clientY - rect.top - size / 2}px`;
+    return {
 
-    element.appendChild(ripple);
+        initialize
 
-    ripple.addEventListener("animationend", () => {
+    };
 
-        ripple.remove();
-
-    });
-
-}
-
-
-/**
- * Registra los eventos.
- */
-function registerRippleEvents() {
-
-    rippleElements.forEach(element => {
-
-        element.style.position = "relative";
-        element.style.overflow = "hidden";
-
-        element.addEventListener(
-
-            "click",
-
-            createRipple
-
-        );
-
-    });
-
-}
-
-
-/**
- * Inicializa el efecto.
- */
-function initializeRipple() {
-
-    registerRippleEvents();
-
-}
-
-
-/* ===================================================== */
-/* [03] INICIALIZACIÓN                                   */
-/* ===================================================== */
-
-initializeRipple();   
+})();

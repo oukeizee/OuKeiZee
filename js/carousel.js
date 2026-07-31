@@ -54,19 +54,31 @@ const Carousel = (() => {
 
     function initialize() {
 
-        cacheDOM();
+    cacheDOM();
 
-        if (!validate()) {
+    if (!validate()) {
 
-            console.warn("Carousel: elementos no encontrados.");
+        console.warn("Carousel: elementos no encontrados.");
 
-            return;
-
-        }
-
-        console.log("Carousel inicializado.");
+        return;
 
     }
+
+    section.addEventListener("mouseenter", () => {
+
+        track.style.animationPlayState = "paused";
+
+    });
+
+    section.addEventListener("mouseleave", () => {
+
+        track.style.animationPlayState = "running";
+
+    });
+
+    console.log("Carousel inicializado.");
+
+}
 
     return {
 

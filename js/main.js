@@ -93,5 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
     Services.initialize();
     Counters.initialize();
     Cursor.initialize();
+    Ripple.initialize();
 
 });

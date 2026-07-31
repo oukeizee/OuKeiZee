@@ -18,82 +18,30 @@ RESPONSABILIDADES
 ===========================================================
 */
 
-
-/* ===================================================== */
-/* [01] INICIALIZACIÓN GLOBAL                            */
-/* ===================================================== */
+/*
+===========================================================
+PROYECTO  : OuKeiZee Portfolio
+VERSIÓN   : 1.0.4
+ARCHIVO   : main.js
+===========================================================
+*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("====================================");
-    console.log("OuKeiZee Portfolio v1.0.3");
-    console.log("Inicializando módulos...");
-    console.log("====================================");
-
-    // Loader
-    if (typeof initializeLoader === "function") {
-        initializeLoader();
-    }
-
-    // Tema
-    if (typeof initializeTheme === "function") {
-        initializeTheme();
-    }
-
-    // Navbar
-    if (typeof initializeNavbar === "function") {
-        initializeNavbar();
-    }
-
-    // Carrusel
-    if (typeof initializeCarousel === "function") {
-        initializeCarousel();
-    }
-
-    // Contadores
-    if (typeof initializeCounters === "function") {
-        initializeCounters();
-    }
-
-    // Habilidades
-    if (typeof initializeSkills === "function") {
-        initializeSkills();
-    }
-
-    // Servicios
-    if (typeof initializeServices === "function") {
-        initializeServices();
-    }
-
-    // Cursor
-    if (typeof initializeCursor === "function") {
-        initializeCursor();
-    }
-
-    // Ripple
-    if (typeof initializeRipple === "function") {
-        initializeRipple();
-    }
-
-    // Redes sociales
-    if (typeof initializeSocialMenu === "function") {
-        initializeSocialMenu();
-    }
-
-    // Formulario
-    if (typeof initializeContactForm === "function") {
-        initializeContactForm();
-    }
-
-    console.log("Todos los módulos fueron cargados correctamente.");
-
     Loader.initialize();
+
     Skills.initialize();
+
     Theme.initialize();
+
     Services.initialize();
+
     Counters.initialize();
+
     Cursor.initialize();
+
     Ripple.initialize();
+
     Social.initialize();
 
 });

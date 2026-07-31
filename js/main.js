@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Todos los módulos fueron cargados correctamente.");
 
-});
+    Loader.initialize();
+    Skills.initialize();
 
-Loader.initialize();
+});

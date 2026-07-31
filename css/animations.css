@@ -1,0 +1,152 @@
+/*
+===========================================================
+PROYECTO  : Portafolio Profesional OuKeiZee
+AUTOR     : OuKeiZee
+VERSIÓN   : 1.0.2
+ARCHIVO   : css/animations.css
+DESCRIPCIÓN:
+Animaciones globales del proyecto.
+
+Contiene todos los keyframes y animaciones reutilizables.
+
+© 2026 OuKeiZee
+===========================================================
+*/
+
+
+/* ===================================================== */
+/* [01] Loader                                            */
+/* ===================================================== */
+
+@keyframes loadbar{
+    to{
+        width:100%;
+    }
+}
+
+@keyframes logoSpin{
+    from{
+        transform:rotateY(0deg);
+    }
+    to{
+        transform:rotateY(360deg);
+    }
+}
+
+@keyframes letterSpin{
+    0%{
+        transform:rotateY(0deg);
+    }
+
+    50%{
+        transform:rotateY(180deg);
+        color:#c084fc;
+    }
+
+    100%{
+        transform:rotateY(360deg);
+    }
+}
+
+
+/* ===================================================== */
+/* [02] Elementos flotantes                               */
+/* ===================================================== */
+
+@keyframes floating{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes floatWhatsapp{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes floatExtra{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+
+/* ===================================================== */
+/* [03] Cursor                                             */
+/* ===================================================== */
+
+@keyframes wave{
+
+    0%{
+        transform:translate(-50%,-50%) scale(1);
+        opacity:1;
+    }
+
+    100%{
+        transform:translate(-50%,-50%) scale(2);
+        opacity:.2;
+    }
+
+}
+
+@keyframes rippleWave{
+
+    0%{
+        opacity:.9;
+        transform:translate(-50%,-50%) scale(.3);
+    }
+
+    100%{
+        opacity:0;
+        transform:translate(-50%,-50%) scale(4);
+    }
+
+}
+
+
+/* ===================================================== */
+/* [04] Carrusel                                          */
+/* ===================================================== */
+
+@keyframes scrollCards{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}

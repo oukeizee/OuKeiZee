@@ -19,85 +19,49 @@ RESPONSABILIDADES
 ===========================================================
 */
 
+/*
+===========================================================
+PROYECTO  : OuKeiZee Portfolio
+VERSIÓN   : 1.0.4
+ARCHIVO   : social.js
+===========================================================
+*/
 
-/* ===================================================== */
-/* [01] VARIABLES                                        */
-/* ===================================================== */
+const Social = (() => {
 
-const socialButton = document.getElementById("socialBtn");
-const socialMenu = document.getElementById("socialMenu");
+    function initialize() {
 
+        const menu = document.querySelector(".facebook-menu");
 
-/* ===================================================== */
-/* [02] FUNCIONES                                        */
-/* ===================================================== */
+        if (!menu) return;
 
-/**
- * Abre o cierra el menú.
- */
-function toggleSocialMenu(event) {
+        const button = menu.querySelector(".social-main");
 
-    event.stopPropagation();
+        button.addEventListener("click", function (event) {
 
-    if (!socialMenu) return;
+            event.preventDefault();
+            event.stopPropagation();
 
-    socialMenu.classList.toggle("active");
+            menu.classList.toggle("open");
 
-}
+        });
 
+        document.addEventListener("click", function (event) {
 
-/**
- * Cierra el menú.
- */
-function closeSocialMenu() {
+            if (!menu.contains(event.target)) {
 
-    if (!socialMenu) return;
+                menu.classList.remove("open");
 
-    socialMenu.classList.remove("active");
+            }
 
-}
-
-
-/**
- * Registra eventos.
- */
-function registerSocialEvents() {
-
-    if (socialButton) {
-
-        socialButton.addEventListener(
-
-            "click",
-
-            toggleSocialMenu
-
-        );
+        });
 
     }
 
-    document.addEventListener(
+    return {
 
-        "click",
+        initialize
 
-        closeSocialMenu
+    };
 
-    );
-
-}
-
-
-/**
- * Inicializa el módulo.
- */
-function initializeSocialMenu() {
-
-    registerSocialEvents();
-
-}
-
-
-/* ===================================================== */
-/* [03] INICIALIZACIÓN                                   */
-/* ===================================================== */
-
-initializeSocialMenu();
+})();

@@ -92,5 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
     Theme.initialize();
     Services.initialize();
     Counters.initialize();
+    Cursor.initialize();
 
 });

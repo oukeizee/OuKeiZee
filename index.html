@@ -157,76 +157,12 @@ Pendiente: reorganización completa del CSS y JS. -->
 <!-- ========================================================= -->
 <!-- [10] SCRIPTS DEL SITIO -->
 <!-- ========================================================= -->
-<script src="js/loader.js"></script>
-<script>
-function animateSkill(fillId,labelId,target,interval,delay){
- const fill=document.getElementById(fillId);
- const label=document.getElementById(labelId);
- if(!fill||!label)return;
- function cycle(){
-   let value=0;
-   fill.style.width='0%';
-   label.textContent='0%';
-   const t=setInterval(()=>{
-      value++;
-      fill.style.width=value+'%';
-      label.textContent=value+'%';
-      if(value>=target){
-        clearInterval(t);
-        setTimeout(cycle,500);
-      }
-   },interval);
- }
- setTimeout(cycle,delay);
-}
-window.addEventListener('load',()=>{
- setTimeout(()=>{
-   animateSkill('f1','p1',95,10,0);
-   animateSkill('f2','p2',95,20,400);
-   animateSkill('f3','p3',95,32,900);
-   animateSkill('f4','p4',75,18,1200);
-   animateSkill('f5','p5',85,16,1500);
-   animateSkill('f6','p6',70,18,1800);
-   animateSkill('f7','p7',45,24,2100);
- },1900);
-});
-</script>
-<script src="js/theme.js"></script>
-<script src="js/navbar.js"></script>
+
+
+
 <div id="serviceOverlay"><div id="servicePanel"></div></div>
-<script>
-const panel=document.getElementById('servicePanel');
-document.querySelectorAll('.service-box').forEach(box=>{
- box.addEventListener('mouseenter',e=>{
-   const r=box.getBoundingClientRect();
-   const items=box.dataset.items.split('|').map(i=>'<li>'+i+'</li>').join('');
-   panel.innerHTML='<h3>'+box.dataset.title+'</h3><p>Este servicio incluye:</p><ul>'+items+'</ul>';
-   panel.style.display='block';
-   let left=r.right+20;
-   if(left+380>window.innerWidth) left=r.left-380;
-   panel.style.left=left+'px';
-   panel.style.top=(r.top)+'px';
- });
- box.addEventListener('mouseleave',()=>panel.style.display='none');
-});
-</script>
-<script>
-document.body.style.cursor='none';
-let mouseX=window.innerWidth/2,mouseY=window.innerHeight/2;
-document.addEventListener('mousemove',e=>{
-  mouseX=e.clientX;
-  mouseY=e.clientY;
-});
-function spawnRipple(){
-  const r=document.createElement('div');
-  r.className='ripple';
-  r.style.left=mouseX+'px';
-  r.style.top=mouseY+'px';
-  document.body.appendChild(r);
-  setTimeout(()=>r.remove(),1200);
-}
-setInterval(spawnRipple,120);
-</script>
+
+
 <!-- ========================================================= -->
 <!-- [08] CONTACTO -->
 <!-- ========================================================= -->
@@ -274,52 +210,21 @@ OuKeiZee ™
 Hecho con 💜
 </div>
 </footer>
-<script>
-const portfolioData={
- happyClients:80,
- projectsDone:120,
- logosMade:350,
- yearsExp:7
-};
-function animateCounter(id,target,suffix="+"){
- const el=document.getElementById(id);
- let n=0;
- const step=Math.max(1,Math.ceil(target/60));
- const t=setInterval(()=>{
-   n=Math.min(target,n+step);
-   el.textContent=n+suffix;
-   if(n>=target) clearInterval(t);
- },25);
-}
-const observer=new IntersectionObserver(entries=>{
- entries.forEach(e=>{
-   if(e.isIntersecting){
-     animateCounter('happyClients',portfolioData.happyClients);
-     animateCounter('projectsDone',portfolioData.projectsDone);
-     animateCounter('logosMade',portfolioData.logosMade);
-     animateCounter('yearsExp',portfolioData.yearsExp);
-     observer.disconnect();
-   }
- });
-});
-observer.observe(document.querySelector('.stats-panel'));
-</script>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{
- const menu=document.querySelector('.facebook-menu');
- if(!menu)return;
- const btn=menu.querySelector('.social-main');
- btn.addEventListener('click',function(e){
-   e.preventDefault();
-   e.stopPropagation();
-   menu.classList.toggle('open');
- });
- document.addEventListener('click',function(e){
-   if(!menu.contains(e.target)){
-      menu.classList.remove('open');
-   }
- });
-});
-</script>
+
+
+
+    <script src="js/loader.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/counters.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/ripple.js"></script>
+    <script src="js/social.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
 </html>

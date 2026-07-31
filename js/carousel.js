@@ -81,7 +81,37 @@ const Carousel = (() => {
 }
 
     return {
+function initialize() {
 
+    cacheDOM();
+
+    if (!validate()) {
+
+        console.warn("Carousel: elementos no encontrados.");
+
+        return;
+
+    }
+
+    section.addEventListener("mouseenter", pause);
+
+    section.addEventListener("mouseleave", resume);
+
+    console.log("Carousel inicializado.");
+
+}
+
+function pause() {
+
+    track.style.animationPlayState = "paused";
+
+}
+
+function resume() {
+
+    track.style.animationPlayState = "running";
+
+}
         initialize
 
     };

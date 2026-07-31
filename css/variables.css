@@ -1,0 +1,100 @@
+/*
+===========================================================
+PROYECTO  : Portafolio Profesional OuKeiZee
+AUTOR     : OuKeiZee
+VERSIÓN   : 1.0.2
+ARCHIVO   : css/variables.css
+DESCRIPCIÓN:
+Variables globales del proyecto.
+Centraliza la paleta de colores, tipografía, tamaños,
+bordes y demás constantes reutilizables.
+
+© 2026 OuKeiZee
+===========================================================
+*/
+
+/* ===================================================== */
+/* [01] VARIABLES GLOBALES                               */
+/* ===================================================== */
+
+:root {
+
+    /* ==========================
+       Colores principales
+       ========================== */
+
+    --bg: #080812;
+    --card: #111827;
+    --line: #2b2f47;
+
+    /* ==========================
+       Colores de marca
+       ========================== */
+
+    --accent: #8b5cf6;
+    --accent2: #a855f7;
+
+    /* ==========================
+       Tipografía
+       ========================== */
+
+    --text: #ffffff;
+    --muted: #b7bfd4;
+
+    /* ==========================
+       Bordes
+       ========================== */
+
+    --border-radius-small: 10px;
+    --border-radius-medium: 18px;
+    --border-radius-large: 24px;
+    --border-radius-pill: 999px;
+
+    /* ==========================
+       Sombras
+       ========================== */
+
+    --shadow-purple:
+        0 0 20px rgba(139, 92, 246, .35);
+
+    --shadow-cyan:
+        0 0 18px rgba(34, 211, 238, .35);
+
+    --shadow-card:
+        0 8px 30px rgba(0,0,0,.25);
+
+    /* ==========================
+       Fondos
+       ========================== */
+
+    --background-gradient:
+        radial-gradient(
+            circle at top,
+            #2b124b 0,
+            #080812 35%,
+            #080812 100%
+        );
+
+    --button-gradient:
+        linear-gradient(
+            90deg,
+            var(--accent),
+            var(--accent2)
+        );
+
+    --premium-gradient:
+        linear-gradient(
+            135deg,
+            #7C3AED,
+            #A855F7
+        );
+
+    /* ==========================
+       Transiciones
+       ========================== */
+
+    --transition-fast: .25s;
+    --transition-normal: .35s;
+    --transition-slow: .50s;
+
+}

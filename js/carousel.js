@@ -2,7 +2,7 @@
 ===========================================================
 PROYECTO  : Portafolio Profesional OuKeiZee
 AUTOR     : OuKeiZee
-VERSIÓN   : 1.1.0
+VERSIÓN   : 1.2.0
 ARCHIVO   : js/carousel.js
 
 DESCRIPCIÓN:
@@ -11,8 +11,10 @@ Gestiona el funcionamiento del carrusel.
 RESPONSABILIDADES
 
 - Inicialización del carrusel.
+- Caché de elementos del DOM.
 - Pausa al pasar el cursor.
 - Reanudación automática.
+- Estado centralizado del carrusel.
 
 © 2026 OuKeiZee
 ===========================================================
@@ -20,52 +22,119 @@ RESPONSABILIDADES
 
 const Carousel = (() => {
 
-    let section = null;
-    let track = null;
-    let cards = [];
+    /*
+    ===========================================================
+    ESTADO DEL CARRUSEL
+    ===========================================================
+    */
 
-    let paused = false;
+    const state = {
+
+        section: null,
+
+        track: null,
+
+        cards: [],
+
+        prevBtn: null,
+
+        nextBtn: null,
+
+        paused: false,
+
+        currentIndex: 0,
+
+        animationId: null,
+
+        autoPlaySpeed: 28,
+
+        initialized: false
+
+    };
+
+    /*
+    ===========================================================
+    CACHE DEL DOM
+    ===========================================================
+    */
 
     function cacheDOM() {
 
-        section = document.querySelector(".carousel-section");
-        track = document.querySelector(".carousel-track");
+        state.section = document.querySelector(".carousel-section");
 
-        if (track) {
+        state.track = document.querySelector(".carousel-track");
 
-            cards = [...track.querySelectorAll(".carousel-card")];
+        state.prevBtn = document.querySelector(".carousel-btn.prev");
+
+        state.nextBtn = document.querySelector(".carousel-btn.next");
+
+        if (state.track) {
+
+            state.cards = [
+                ...state.track.querySelectorAll(".carousel-card")
+            ];
 
         }
 
     }
 
+    /*
+    ===========================================================
+    VALIDACIÓN
+    ===========================================================
+    */
+
     function validate() {
 
-        return section && track && cards.length > 0;
+        return (
+            state.section &&
+            state.track &&
+            state.cards.length > 0
+        );
 
     }
+
+    /*
+    ===========================================================
+    PAUSAR
+    ===========================================================
+    */
 
     function pause() {
 
-        if (paused) return;
+        if (state.paused) return;
 
-        paused = true;
+        state.paused = true;
 
-        track.style.animationPlayState = "paused";
+        state.track.style.animationPlayState = "paused";
 
     }
+
+    /*
+    ===========================================================
+    REANUDAR
+    ===========================================================
+    */
 
     function resume() {
 
-        if (!paused) return;
+        if (!state.paused) return;
 
-        paused = false;
+        state.paused = false;
 
-        track.style.animationPlayState = "running";
+        state.track.style.animationPlayState = "running";
 
     }
 
+    /*
+    ===========================================================
+    INICIALIZACIÓN
+    ===========================================================
+    */
+
     function initialize() {
+
+        if (state.initialized) return;
 
         cacheDOM();
 
@@ -77,13 +146,21 @@ const Carousel = (() => {
 
         }
 
-        section.addEventListener("mouseenter", pause);
+        state.section.addEventListener("mouseenter", pause);
 
-        section.addEventListener("mouseleave", resume);
+        state.section.addEventListener("mouseleave", resume);
+
+        state.initialized = true;
 
         console.log("Carousel inicializado.");
 
     }
+
+    /*
+    ===========================================================
+    API PÚBLICA
+    ===========================================================
+    */
 
     return {
 

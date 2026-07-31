@@ -18,70 +18,77 @@ RESPONSABILIDADES
 ===========================================================
 */
 
+/*
+===========================================================
+PROYECTO  : OuKeiZee Portfolio
+VERSIÓN   : 1.0.4
+ARCHIVO   : skills.js
+===========================================================
+*/
 
-/* ===================================================== */
-/* [01] VARIABLES                                        */
-/* ===================================================== */
+const Skills = (() => {
 
-const skillBars = document.querySelectorAll(".skill-progress");
+    function animateSkill(fillId, labelId, target, interval, delay) {
 
+        const fill = document.getElementById(fillId);
+        const label = document.getElementById(labelId);
 
-/* ===================================================== */
-/* [02] FUNCIONES                                        */
-/* ===================================================== */
+        if (!fill || !label) return;
 
-/**
- * Anima una barra de progreso.
- */
-function animateSkillBar(bar) {
+        function cycle() {
 
-    const progress = bar.dataset.progress;
+            let value = 0;
 
-    if (!progress) return;
+            fill.style.width = "0%";
+            label.textContent = "0%";
 
-    bar.style.width = progress + "%";
+            const timer = setInterval(() => {
 
-}
+                value++;
 
+                fill.style.width = value + "%";
+                label.textContent = value + "%";
 
-/**
- * Inicializa las barras de habilidades.
- */
-function initializeSkills() {
+                if (value >= target) {
 
-    if (skillBars.length === 0) return;
+                    clearInterval(timer);
 
-    const observer = new IntersectionObserver(entries => {
+                    setTimeout(cycle, 500);
 
-        entries.forEach(entry => {
+                }
 
-            if (!entry.isIntersecting) return;
+            }, interval);
 
-            animateSkillBar(entry.target);
+        }
 
-            observer.unobserve(entry.target);
+        setTimeout(cycle, delay);
+
+    }
+
+    function initialize() {
+
+        window.addEventListener("load", () => {
+
+            setTimeout(() => {
+
+                animateSkill("f1", "p1", 95, 10, 0);
+                animateSkill("f2", "p2", 95, 20, 400);
+                animateSkill("f3", "p3", 95, 32, 900);
+                animateSkill("f4", "p4", 75, 18, 1200);
+                animateSkill("f5", "p5", 85, 16, 1500);
+                animateSkill("f6", "p6", 70, 18, 1800);
+                animateSkill("f7", "p7", 45, 24, 2100);
+
+            }, 1900);
 
         });
 
-    }, {
+    }
 
-        threshold: 0.30
+    return {
 
-    });
+        initialize
 
-    skillBars.forEach(bar => {
+    };
 
-        bar.style.width = "0%";
-
-        observer.observe(bar);
-
-    });
-
-}
-
-
-/* ===================================================== */
-/* [03] INICIALIZACIÓN                                   */
-/* ===================================================== */
-
-initializeSkills();
+})();

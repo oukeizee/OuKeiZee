@@ -19,167 +19,59 @@ RESPONSABILIDADES
 ===========================================================
 */
 
+/*
+===========================================================
+PROYECTO  : OuKeiZee Portfolio
+VERSIÓN   : 1.1.0
+ARCHIVO   : carousel.js
+===========================================================
+*/
 
-/* ===================================================== */
-/* [01] VARIABLES                                        */
-/* ===================================================== */
+const Carousel = (() => {
 
-const carousel = document.querySelector(".carousel");
-const carouselTrack = document.querySelector(".carousel-track");
+    let section = null;
+    let track = null;
+    let cards = [];
 
-const previousButton = document.getElementById("carouselPrev");
-const nextButton = document.getElementById("carouselNext");
+    function cacheDOM() {
 
-const slides = document.querySelectorAll(".carousel-item");
+        section = document.querySelector(".carousel-section");
+        track = document.querySelector(".carousel-track");
 
-let currentSlide = 0;
+        if (track) {
 
-let autoplay = null;
+            cards = [...track.querySelectorAll(".carousel-card")];
 
-const AUTOPLAY_TIME = 4000;
-
-
-/* ===================================================== */
-/* [02] FUNCIONES                                        */
-/* ===================================================== */
-
-/**
- * Muestra un slide.
- */
-function showSlide(index) {
-
-    if (!carouselTrack || slides.length === 0) return;
-
-    if (index >= slides.length) {
-
-        currentSlide = 0;
-
-    } else if (index < 0) {
-
-        currentSlide = slides.length - 1;
-
-    } else {
-
-        currentSlide = index;
+        }
 
     }
 
-    carouselTrack.style.transform =
-        `translateX(-${currentSlide * 100}%)`;
+    function validate() {
 
-}
-
-
-/**
- * Siguiente slide.
- */
-function nextSlide() {
-
-    showSlide(currentSlide + 1);
-
-}
-
-
-/**
- * Slide anterior.
- */
-function previousSlide() {
-
-    showSlide(currentSlide - 1);
-
-}
-
-
-/**
- * Inicia el autoplay.
- */
-function startAutoplay() {
-
-    stopAutoplay();
-
-    autoplay = setInterval(() => {
-
-        nextSlide();
-
-    }, AUTOPLAY_TIME);
-
-}
-
-
-/**
- * Detiene el autoplay.
- */
-function stopAutoplay() {
-
-    if (autoplay) {
-
-        clearInterval(autoplay);
+        return section && track && cards.length > 0;
 
     }
 
-}
+    function initialize() {
 
+        cacheDOM();
 
-/**
- * Registra eventos.
- */
-function registerCarouselEvents() {
+        if (!validate()) {
 
-    if (nextButton) {
+            console.warn("Carousel: elementos no encontrados.");
 
-        nextButton.addEventListener("click", () => {
+            return;
 
-            nextSlide();
-            startAutoplay();
+        }
 
-        });
+        console.log("Carousel inicializado.");
 
     }
 
-    if (previousButton) {
+    return {
 
-        previousButton.addEventListener("click", () => {
+        initialize
 
-            previousSlide();
-            startAutoplay();
+    };
 
-        });
-
-    }
-
-    if (carousel) {
-
-        carousel.addEventListener(
-            "mouseenter",
-            stopAutoplay
-        );
-
-        carousel.addEventListener(
-            "mouseleave",
-            startAutoplay
-        );
-
-    }
-
-}
-
-
-/**
- * Inicializa el carrusel.
- */
-function initializeCarousel() {
-
-    showSlide(0);
-
-    registerCarouselEvents();
-
-    startAutoplay();
-
-}
-
-
-/* ===================================================== */
-/* [03] INICIALIZACIÓN                                   */
-/* ===================================================== */
-
-initializeCarousel();
+})();

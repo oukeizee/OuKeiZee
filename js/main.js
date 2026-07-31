@@ -94,5 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
     Counters.initialize();
     Cursor.initialize();
     Ripple.initialize();
+    Social.initialize();
 
 });

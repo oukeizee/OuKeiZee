@@ -1,0 +1,182 @@
+/*
+===========================================================
+PROYECTO  : Portafolio Profesional OuKeiZee
+AUTOR     : OuKeiZee
+VERSIÓN   : 1.0.2
+ARCHIVO   : css/theme.css
+DESCRIPCIÓN:
+Gestión de temas del sitio.
+
+Contiene:
+- Tema oscuro (predeterminado)
+- Tema claro
+- Componentes que cambian según el tema
+
+© 2026 OuKeiZee
+===========================================================
+*/
+
+
+/* ===================================================== */
+/* [01] TEMA OSCURO (DEFAULT)                            */
+/* ===================================================== */
+
+body{
+
+    background:var(--background-gradient);
+
+    color:var(--text);
+
+}
+
+
+/* ===================================================== */
+/* [02] TEMA CLARO                                       */
+/* ===================================================== */
+
+body.light{
+
+    background:#f5f7fb;
+
+    color:#222;
+
+}
+
+
+/* ===================================================== */
+/* [03] TARJETAS                                         */
+/* ===================================================== */
+
+body.light .card,
+body.light .hero,
+body.light aside{
+
+    background:#ffffff;
+
+    color:#222;
+
+    border-color:#dddddd;
+
+}
+
+
+/* ===================================================== */
+/* [04] PANEL DE SERVICIOS                               */
+/* ===================================================== */
+
+body.light #servicePanel{
+
+    background:#ffffff;
+
+    color:#222222;
+
+    border-color:var(--accent);
+
+}
+
+
+/* ===================================================== */
+/* [05] FOOTER                                           */
+/* ===================================================== */
+
+body.light .footer-premium{
+
+    background:#eef1f8;
+
+    border-top:1px solid #d8dce8;
+
+}
+
+body.light .footer-premium p,
+body.light .footer-premium a{
+
+    color:#444444;
+
+}
+
+
+/* ===================================================== */
+/* [06] PREMIUM GLASS                                    */
+/* ===================================================== */
+
+body.light .card,
+body.light .hero,
+body.light .service-box{
+
+    background:linear-gradient(
+        180deg,
+        #ffffff,
+        #f4f7ff
+    );
+
+}
+
+
+/* ===================================================== */
+/* [07] BOTÓN CAMBIO DE TEMA                             */
+/* ===================================================== */
+
+.theme-toggle{
+
+    position:fixed;
+
+    top:16px;
+
+    right:16px;
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:#ffffff;
+
+    background:linear-gradient(
+        135deg,
+        #7C3AED,
+        #A855F7
+    );
+
+    box-shadow:0 8px 25px rgba(124,58,237,.45);
+
+    transition:var(--transition-normal);
+
+    z-index:999999;
+
+}
+
+.theme-toggle:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+/* ===================================================== */
+/* [08] TRANSICIONES ENTRE TEMAS                         */
+/* ===================================================== */
+
+body,
+.card,
+.hero,
+aside,
+.footer-premium,
+.service-box,
+#servicePanel{
+
+    transition:
+
+        background .35s ease,
+
+        color .35s ease,
+
+        border-color .35s ease,
+
+        box-shadow .35s ease;
+
+}   

@@ -44,4 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     Social.initialize();
 
+    Carousel.initialize();
+
 });

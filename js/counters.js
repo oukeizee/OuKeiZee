@@ -18,88 +18,80 @@ RESPONSABILIDADES
 ===========================================================
 */
 
+/*
+===========================================================
+PROYECTO  : OuKeiZee Portfolio
+VERSIÓN   : 1.0.4
+ARCHIVO   : counters.js
+===========================================================
+*/
 
-/* ===================================================== */
-/* [01] VARIABLES                                        */
-/* ===================================================== */
+const Counters = (() => {
 
-const counters = document.querySelectorAll(".counter");
+    const portfolioData = {
+        happyClients: 80,
+        projectsDone: 120,
+        logosMade: 350,
+        yearsExp: 7
+    };
 
-const COUNTER_DURATION = 2000;
+    function animateCounter(id, target, suffix = "+") {
 
+        const element = document.getElementById(id);
 
-/* ===================================================== */
-/* [02] FUNCIONES                                        */
-/* ===================================================== */
+        if (!element) return;
 
-/**
- * Anima un contador.
- */
-function animateCounter(counter) {
+        let value = 0;
 
-    const target = Number(counter.dataset.target);
+        const step = Math.max(1, Math.ceil(target / 60));
 
-    let current = 0;
+        const timer = setInterval(() => {
 
-    const increment = target / (COUNTER_DURATION / 16);
+            value = Math.min(target, value + step);
 
-    const timer = setInterval(() => {
+            element.textContent = value + suffix;
 
-        current += increment;
+            if (value >= target) {
 
-        if (current >= target) {
+                clearInterval(timer);
 
-            counter.textContent = target;
+            }
 
-            clearInterval(timer);
+        }, 25);
 
-            return;
+    }
 
-        }
+    function initialize() {
 
-        counter.textContent = Math.floor(current);
+        const statsPanel = document.querySelector(".stats-panel");
 
-    }, 16);
+        if (!statsPanel) return;
 
-}
+        const observer = new IntersectionObserver(entries => {
 
+            entries.forEach(entry => {
 
-/**
- * Inicializa el observer.
- */
-function initializeCounters() {
+                if (!entry.isIntersecting) return;
 
-    if (counters.length === 0) return;
+                animateCounter("happyClients", portfolioData.happyClients);
+                animateCounter("projectsDone", portfolioData.projectsDone);
+                animateCounter("logosMade", portfolioData.logosMade);
+                animateCounter("yearsExp", portfolioData.yearsExp);
 
-    const observer = new IntersectionObserver(entries => {
+                observer.disconnect();
 
-        entries.forEach(entry => {
-
-            if (!entry.isIntersecting) return;
-
-            animateCounter(entry.target);
-
-            observer.unobserve(entry.target);
+            });
 
         });
 
-    }, {
+        observer.observe(statsPanel);
 
-        threshold: 0.4
+    }
 
-    });
+    return {
 
-    counters.forEach(counter => {
+        initialize
 
-        observer.observe(counter);
+    };
 
-    });
-
-}
-
-
-/* ===================================================== */
-/* [03] INICIALIZACIÓN                                   */
-/* ===================================================== */
-
-initializeCounters();
+})();

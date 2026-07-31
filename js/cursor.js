@@ -19,103 +19,48 @@ RESPONSABILIDADES
 ===========================================================
 */
 
+/*
+===========================================================
+PROYECTO  : OuKeiZee Portfolio
+VERSIÓN   : 1.0.4
+ARCHIVO   : cursor.js
+===========================================================
+*/
 
-/* ===================================================== */
-/* [01] VARIABLES                                        */
-/* ===================================================== */
+const Cursor = (() => {
 
-const cursor = document.querySelector(".cursor");
-const cursorRing = document.querySelector(".cursor-ring");
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
 
-const interactiveElements = document.querySelectorAll(
-    "a, button, .service-card, .portfolio-item"
-);
+    function updatePosition(event) {
 
+        mouseX = event.clientX;
+        mouseY = event.clientY;
 
-/* ===================================================== */
-/* [02] FUNCIONES                                        */
-/* ===================================================== */
+    }
 
-/**
- * Actualiza la posición del cursor.
- */
-function moveCursor(event) {
+    function initialize() {
 
-    if (!cursor || !cursorRing) return;
+        document.body.style.cursor = "none";
 
-    const x = event.clientX;
-    const y = event.clientY;
+        document.addEventListener("mousemove", updatePosition);
 
-    cursor.style.left = `${x}px`;
-    cursor.style.top = `${y}px`;
+    }
 
-    cursorRing.style.left = `${x}px`;
-    cursorRing.style.top = `${y}px`;
+    function getPosition() {
 
-}
+        return {
+            x: mouseX,
+            y: mouseY
+        };
 
+    }
 
-/**
- * Activa el modo hover.
- */
-function activateHover() {
+    return {
 
-    cursor?.classList.add("hover");
-    cursorRing?.classList.add("hover");
+        initialize,
+        getPosition
 
-}
+    };
 
-
-/**
- * Desactiva el modo hover.
- */
-function deactivateHover() {
-
-    cursor?.classList.remove("hover");
-    cursorRing?.classList.remove("hover");
-
-}
-
-
-/**
- * Registra los eventos.
- */
-function registerCursorEvents() {
-
-    document.addEventListener(
-        "mousemove",
-        moveCursor
-    );
-
-    interactiveElements.forEach(element => {
-
-        element.addEventListener(
-            "mouseenter",
-            activateHover
-        );
-
-        element.addEventListener(
-            "mouseleave",
-            deactivateHover
-        );
-
-    });
-
-}
-
-
-/**
- * Inicializa el cursor.
- */
-function initializeCursor() {
-
-    registerCursorEvents();
-
-}
-
-
-/* ===================================================== */
-/* [03] INICIALIZACIÓN                                   */
-/* ===================================================== */
-
-initializeCursor();
+})();

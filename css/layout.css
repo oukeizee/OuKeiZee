@@ -1,0 +1,340 @@
+/*
+===========================================================
+PROYECTO  : Portafolio Profesional OuKeiZee
+AUTOR     : OuKeiZee
+VERSIÓN   : 1.0.2
+ARCHIVO   : css/layout.css
+DESCRIPCIÓN:
+Estructura principal del sitio.
+
+Contiene únicamente reglas relacionadas con la
+distribución (Layout) del proyecto.
+
+© 2026 OuKeiZee
+===========================================================
+*/
+
+
+/* ===================================================== */
+/* [01] CONTENEDOR PRINCIPAL                             */
+/* ===================================================== */
+
+.layout{
+    display:block;
+}
+
+
+/* ===================================================== */
+/* [02] CONTENIDO PRINCIPAL                              */
+/* ===================================================== */
+
+main{
+
+    width:calc(100% - 180px);
+
+    max-width:1400px;
+
+    margin-left:auto;
+    margin-right:auto;
+
+    padding:30px;
+
+}
+
+
+/* ===================================================== */
+/* [03] PANEL HERO                                       */
+/* ===================================================== */
+
+.hero{
+
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    gap:20px;
+
+    padding:40px;
+
+    margin-bottom:24px;
+
+}
+
+.hero h1{
+
+    font-size:3.8rem;
+
+    line-height:1.05;
+
+}
+
+.hero span{
+
+    color:var(--accent);
+
+}
+
+.hero p{
+
+    margin:18px 0;
+
+}
+
+.avatar{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:10rem;
+
+}
+
+
+/* ===================================================== */
+/* [04] GRID GENERAL                                     */
+/* ===================================================== */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+
+/* ===================================================== */
+/* [05] GALERÍAS                                         */
+/* ===================================================== */
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:8px;
+
+}
+
+
+/* ===================================================== */
+/* [06] PANEL DE ESTADÍSTICAS                            */
+/* ===================================================== */
+
+.stats-panel{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:10px;
+
+    margin:30px 0;
+
+    padding:22px;
+
+}
+
+.stat{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:10px 18px;
+
+}
+
+.stat i{
+
+    font-size:34px;
+
+}
+
+.stat h3{
+
+    font-size:2rem;
+
+}
+
+.stat p{
+
+    margin:0;
+
+}
+
+
+/* ===================================================== */
+/* [07] CARRUSEL                                         */
+/* ===================================================== */
+
+.carousel-section{
+
+    margin:28px 0 36px;
+
+}
+
+.carousel-wrap{
+
+    overflow:hidden;
+
+    position:relative;
+
+    padding:10px 0;
+
+}
+
+.carousel-track{
+
+    display:flex;
+
+    gap:18px;
+
+    width:max-content;
+
+}
+
+.carousel-card{
+
+    width:180px;
+
+    height:250px;
+
+}
+
+.carousel-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+/* ===================================================== */
+/* [08] FORMULARIO DE CONTACTO                           */
+/* ===================================================== */
+
+.contact-premium{
+
+    display:grid;
+
+    grid-template-columns:320px 1fr 320px;
+
+    margin:50px auto;
+
+    width:calc(100% - 180px);
+
+    max-width:1400px;
+
+}
+
+.contact-left{
+
+    padding:40px;
+
+}
+
+.contact-form{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:16px;
+
+    padding:28px;
+
+}
+
+.contact-form textarea{
+
+    grid-column:1 / 3;
+
+    min-height:150px;
+
+}
+
+.contact-form button{
+
+    justify-self:end;
+
+    grid-column:2;
+
+}
+
+.contact-info{
+
+    padding:34px;
+
+}
+
+
+/* ===================================================== */
+/* [09] FOOTER                                           */
+/* ===================================================== */
+
+.footer-premium{
+
+    width:calc(100% - 180px);
+
+    max-width:1400px;
+
+    margin:60px auto 0;
+
+    padding:50px 40px 20px;
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1fr;
+
+    gap:40px;
+
+}
+
+.footer-social{
+
+    display:flex;
+
+    gap:14px;
+
+}
+
+.footer-copy{
+
+    margin-top:35px;
+
+    padding-top:18px;
+
+    text-align:center;
+
+}
+
+
+/* ===================================================== */
+/* [10] BOTÓN PORTAFOLIO                                 */
+/* ===================================================== */
+
+.portfolio-btn{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:35px 0;
+
+}

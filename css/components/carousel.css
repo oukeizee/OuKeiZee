@@ -6,17 +6,199 @@ VERSIÓN   : 1.3.0
 ARCHIVO   : css/components/carousel.css
 
 DESCRIPCIÓN:
-Contiene todos los estilos del carrusel de proyectos.
+Estilos exclusivos del carrusel de proyectos.
 
 RESPONSABILIDADES
 
-- Contenedor del carrusel.
+- Contenedor principal.
 - Tarjetas.
-- Animaciones.
-- Botones.
+- Imágenes.
 - Hover.
+- Botones.
 - Responsive.
 
 © 2026 OuKeiZee
 ===========================================================
 */
+
+/* ==========================================================
+   CONTENEDOR DEL CARRUSEL
+========================================================== */
+
+.carousel-section{
+    margin:28px 0 36px;
+}
+
+.carousel-title{
+    font:700 2rem "Space Grotesk";
+    text-align:center;
+    margin-bottom:18px;
+}
+
+.carousel-wrap{
+    position:relative;
+    overflow:hidden;
+    padding:10px 0;
+}
+
+.carousel-track{
+    display:flex;
+    gap:18px;
+    width:max-content;
+}
+
+/* ==========================================================
+   TARJETAS
+========================================================== */
+
+.carousel-card{
+
+    width:180px;
+    height:250px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        #2a2f42,
+        #171b28
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 0 15px rgba(168,85,247,.25);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        filter .35s ease;
+
+}
+
+.carousel-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.35s;
+
+}
+
+/* ==========================================================
+   EFECTOS
+========================================================== */
+
+.carousel-card:hover{
+
+    transform:
+        translateY(-12px)
+        scale(1.05);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35);
+
+    z-index:20;
+
+}
+
+.carousel-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.carousel-track:hover .carousel-card{
+
+    filter:brightness(.70);
+
+}
+
+.carousel-track:hover .carousel-card:hover{
+
+    filter:brightness(1);
+
+}
+
+/* ==========================================================
+   BOTONES
+========================================================== */
+
+.carousel-btn{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    z-index:30;
+
+    font-size:22px;
+
+    color:#fff;
+
+    background:rgba(15,23,42,.75);
+
+    backdrop-filter:blur(8px);
+
+    transition:.25s;
+
+}
+
+.carousel-btn:hover{
+
+    transform:
+        translateY(-50%)
+        scale(1.1);
+
+    background:#8b5cf6;
+
+}
+
+.carousel-btn.prev{
+
+    left:12px;
+
+}
+
+.carousel-btn.next{
+
+    right:12px;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:768px){
+
+    .carousel-card{
+
+        width:140px;
+
+        height:200px;
+
+    }
+
+}

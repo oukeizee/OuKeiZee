@@ -2,7 +2,7 @@
 ===========================================================
 PROYECTO  : Portafolio Profesional OuKeiZee
 AUTOR     : OuKeiZee
-VERSIÓN   : 1.0.3
+VERSIÓN   : 1.3.2
 ARCHIVO   : js/loader.js
 
 DESCRIPCIÓN:
@@ -19,37 +19,32 @@ RESPONSABILIDADES
 ===========================================================
 */
 
-/*
-===========================================================
-PROYECTO  : Portafolio Profesional OuKeiZee
-AUTOR     : OuKeiZee
-VERSIÓN   : 1.0.4
-ARCHIVO   : js/loader.js
-===========================================================
-*/
-
 const Loader = (() => {
+
+    const MINIMUM_TIME = 1800;
+
+    function hideLoader() {
+
+        const loader = document.getElementById("loader");
+
+        if (!loader) return;
+
+        loader.style.transition = "opacity 0.5s ease";
+        loader.style.opacity = "0";
+
+        setTimeout(() => {
+
+            loader.remove();
+
+        }, 500);
+
+    }
 
     function initialize() {
 
         window.addEventListener("load", () => {
 
-            setTimeout(() => {
-
-                const loader = document.getElementById("loader");
-
-                if (!loader) return;
-
-                loader.style.opacity = "0";
-                loader.style.transition = "opacity .5s";
-
-                setTimeout(() => {
-
-                    loader.remove();
-
-                }, 500);
-
-            }, 1800);
+            window.setTimeout(hideLoader, MINIMUM_TIME);
 
         });
 
